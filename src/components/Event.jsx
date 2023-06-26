@@ -2,7 +2,7 @@ import React from 'react'
 
 const Event = ({ img, text, date, type }) => {
   return (
-    <div className="bg-white p-5 rounded-lg w-max relative shadow-xl max-w-[360px]">
+    <div className="bg-white p-5 rounded-lg relative shadow-xl">
       <span className="select-none bg-white px-2 py-1 rounded-[5px] text-primary text-sm absolute top-8 left-8">
         FREE
       </span>
