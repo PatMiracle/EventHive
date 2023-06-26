@@ -9,6 +9,11 @@ export default {
         navyBlue: '#10107B',
         grey600: '#7E7E7E',
       },
+      screens: {
+        lg: '992px',
+        xl: '1280px',
+        '2xl': '1400px',
+      },
     },
   },
   plugins: [],
