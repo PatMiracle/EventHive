@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Logo from './Logo'
 import { Link } from 'react-router-dom'
 import {
@@ -29,10 +29,14 @@ const links = [
     url: '',
   },
 ]
-const email_regex = /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
+
+const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
+
 const Footer = () => {
   const [email, setEmail] = useState('')
   const [invalid, setInvalid] = useState(false)
+
+  const emailRef = useRef(null)
 
   // reset invalid when email changes
   useEffect(() => {
@@ -44,6 +48,8 @@ const Footer = () => {
     // validate email
     if (!email_regex.test(email)) {
       setInvalid(true)
+    } else {
+      emailRef.current.value = ''
     }
   }
 
@@ -58,9 +64,10 @@ const Footer = () => {
           type="text"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your mail"
-          className={`py-4 px-5 rounded-md w-72 border-2 border-solid ${
+          className={`py-4 px-5 rounded-md w-72 border-4 border-solid ${
             invalid ? 'text-red-500 border-red-500' : 'text-black border-white'
           }`}
+          ref={emailRef}
         />
         <button className="bg-primary rounded-md text-white py-4 px-10">
           Subscribe
@@ -86,7 +93,7 @@ const Footer = () => {
             Hindi
           </button>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-4 ml-[5%]">
           <Link>
             <PiLinkedinLogoLight size={30} />
           </Link>
