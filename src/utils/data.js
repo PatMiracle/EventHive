@@ -55,4 +55,15 @@ const cards = [
     location: 'Nanyang Ave, Singapura',
   },
 ]
-export { event, cards }
+const brands = [
+  '/brands/spotify.png',
+  '/brands/google.png',
+  '/brands/stripe.png',
+  '/brands/youtube.png',
+  '/brands/microsoft.png',
+  '/brands/medium.png',
+  '/brands/zoom.png',
+  '/brands/uber.png',
+  '/brands/grab.png',
+]
+export { event, cards, brands }
