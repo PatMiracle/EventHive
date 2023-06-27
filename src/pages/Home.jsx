@@ -90,7 +90,7 @@ const Home = () => {
           </button>
         </section>
         {/* make event */}
-        <div className="relative before:absolute before:bg-navyBlue before:-z-10 before:h-4/5 before:w-full before:left-0 before:bottom-0 text-backgroundGrey flex pt-8 items-center pr-64 pl-20 justify-between">
+        <div className="relative before:absolute before:bg-navyBlue before:-z-10 before:h-[85%] before:w-full before:left-0 before:bottom-0 text-backgroundGrey flex pt-8 items-center pr-64 pl-20 justify-between">
           <img src="/make_event.png" alt="" />
           <div className="w-max">
             <h3 className="text-4xl font-bold">Make your own Event</h3>
