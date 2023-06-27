@@ -20,7 +20,7 @@ const Home = () => {
         <h2 className="text-white font-bold text-[4rem] absolute top-20 left-1/2 -translate-x-1/2 text-center uppercase max-w-xl">
           Made for those who do
         </h2>
-        <img src="/homebanner.png" alt="" />
+        <img src="/homebanner.png" alt="" role="banner" />
         {/* left right btn container */}
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full">
           <button className="absolute left-10 w-[50px] h-[50px] bg-[#f2f2f233] rounded-full flex items-center justify-center text-white">
