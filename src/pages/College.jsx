@@ -13,7 +13,7 @@ const College = () => {
           <img src="/roorkee.png" alt="" role="banner" className="w-full" />
           <div className="w-11/12 mx-auto">
             <h2 className="text-4xl font-bold my-8">IIT Roorke</h2>
-            <div className="grid gap-4">
+            <div className="grid gap-7">
               <p>
                 DesignHub organized a 3D Modeling Workshop using Blender on 16th
                 February at 5 PM. The workshop taught participants the magic of
