@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
+import { Link } from 'react-router-dom'
+
 const SignUp = () => {
   const [name, setName] = useState('')
   const [pswd, setpswd] = useState('')
@@ -28,15 +30,23 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault()
     validateInputs()
-    if (validateInputs) {
-      console.log('hii')
-    }
   }
 
   return (
-    <div className="flex">
-      <div className="min-h-screen w-1/3 bg-[url(/signupbanner.png)] bg-cover"></div>
-      <main className="px-40 w-2/3 pt-[7%] pb-5">
+    <div>
+      <div className="h-screen fixed top-0 left-0 w-1/3 before:absolute before:h-full before:w-full before:-z-20 before:bg-[url(/signupbanner.png)] before:bg-no-repeat before:bg-cover after:absolute after:bg-[url(/overlay.png)] after:top-0 after:left-0 after:h-full after:w-full after:-z-10 bg-cover flex justify-center items-center">
+        <div className="flex flex-col gap-10 text-white text-center">
+          <h2 className="font-bold text-5xl">Welcome back</h2>
+          <p>To keep connected with us provide us with your information </p>
+          <Link
+            to="/login"
+            className="bg-[#ffffff66] w-32 mx-auto py-3 rounded-md"
+          >
+            Sign In
+          </Link>
+        </div>
+      </div>
+      <main className="px-40 absolute left-1/3 w-2/3 pt-[7%] pb-5 inline-block">
         <div className="text-center">
           <Logo size="text-2xl" />
           <h2 className="text-4xl font-bold mt-10">Sign Up to Event Hive</h2>
@@ -52,7 +62,8 @@ const SignUp = () => {
               id="name"
               autoComplete="off"
               onChange={(e) => setName(e.target.value)}
-              className="w-full p-[10px] mt-1 rounded-md"
+              className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
+              placeholder="Enter your email"
               ref={nameRef}
             />
           </div>
@@ -65,7 +76,8 @@ const SignUp = () => {
               type="password"
               id="password"
               onChange={(e) => setpswd(e.target.value)}
-              className="w-full p-[10px] mt-1 rounded-md"
+              className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
+              placeholder="Enter your password"
               ref={pswdRef}
             />
           </div>
@@ -78,7 +90,8 @@ const SignUp = () => {
               type="password"
               id="confirm"
               onChange={(e) => setConfirmPswd(e.target.value)}
-              className="w-full p-[10px] mt-1 rounded-md"
+              className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
+              placeholder="Enter your password"
               ref={confirmPswdRef}
             />
           </div>
