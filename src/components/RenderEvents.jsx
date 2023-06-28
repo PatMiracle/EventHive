@@ -1,4 +1,4 @@
-import Event from './Event'
+import Event from './EventCard'
 import { event } from '../utils/data'
 
 const RenderEvents = () => {

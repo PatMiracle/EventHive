@@ -1,15 +1,16 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Event from '../components/Event'
+import EventCard from '../components/EventCard'
 import { brands, cards, event } from '../utils/data'
 import {
   PiCaretLeftLight,
   PiCaretRightLight,
   PiCaretDownBold,
 } from 'react-icons/pi'
+import { Link } from 'react-router-dom'
 import { BiSearch } from 'react-icons/bi'
-import Card from '../components/Card'
+import CollegeCard from '../components/CollegeCard'
 import RenderEvents from '../components/RenderEvents'
 
 const Home = () => {
@@ -83,9 +84,12 @@ const Home = () => {
           <div className="pt-8 pb-10">
             <RenderEvents />
           </div>
-          <button className="bg-primary text-white rounded-md py-3 px-7 block mx-auto">
+          <Link
+            to="/event"
+            className="bg-primary text-white rounded-md py-3 px-7 block mx-auto w-max"
+          >
             Load more...
-          </button>
+          </Link>
         </section>
         {/* make event */}
         <div className="relative before:absolute before:bg-navyBlue before:-z-10 before:h-[85%] before:w-full before:left-0 before:bottom-0 text-backgroundGrey flex pt-8 items-center pr-64 pl-20 justify-between">
@@ -130,12 +134,15 @@ const Home = () => {
           </h2>
           <div className="grid gap-5 grid-cols-3 w-full pt-8 pb-10">
             {cards.map((data, i) => {
-              return <Card key={i} {...data} />
+              return <CollegeCard key={i} {...data} />
             })}
           </div>
-          <button className="bg-primary text-white rounded-md py-3 px-7 block mx-auto">
+          <Link
+            to="/college"
+            className="bg-primary text-white rounded-md py-3 px-7 block mx-auto w-max"
+          >
             Load more...
-          </button>
+          </Link>
         </section>
         {/* our blogs */}
         <section className="w-10/12 mx-auto pt-20 pb-28">
@@ -146,7 +153,7 @@ const Home = () => {
           </div>
           <div className="grid gap-5 grid-cols-3 w-full py-8">
             {event.slice(2, 5).map((data, i) => {
-              return <Event key={i} {...data} />
+              return <EventCard key={i} {...data} />
             })}
           </div>
         </section>
