@@ -1,7 +1,7 @@
 import Event from './Event'
 import { event } from '../utils/data'
 
-const Events = () => {
+const RenderEvents = () => {
   return (
     <div className="grid grid-cols-3 gap-5">
       {event.map((data, i) => (
@@ -11,4 +11,4 @@ const Events = () => {
   )
 }
 
-export default Events
+export default RenderEvents

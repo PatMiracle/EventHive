@@ -10,7 +10,7 @@ import {
 } from 'react-icons/pi'
 import { BiSearch } from 'react-icons/bi'
 import Card from '../components/Card'
-import Events from '../components/Events'
+import RenderEvents from '../components/RenderEvents'
 
 const Home = () => {
   return (
@@ -81,7 +81,7 @@ const Home = () => {
             </div>
           </div>
           <div className="pt-8 pb-10">
-            <Events />
+            <RenderEvents />
           </div>
           <button className="bg-primary text-white rounded-md py-3 px-7 block mx-auto">
             Load more...

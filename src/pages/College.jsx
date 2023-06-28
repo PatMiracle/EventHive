@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import Events from '../components/Events'
+import RenderEvents from '../components/RenderEvents'
 
 const College = () => {
   return (
@@ -51,7 +51,7 @@ const College = () => {
             <h2 className="text-4xl font-bold mb-10">
               College <span className="text-primary">Events</span>
             </h2>
-            <Events />
+            <RenderEvents />
           </section>
         </article>
       </main>
