@@ -1,8 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { event } from '../utils/data'
-import Event from '../components/Event'
+import Events from '../components/Events'
 
 const College = () => {
   return (
@@ -49,14 +48,10 @@ const College = () => {
             </div>
           </div>
           <section className="w-11/12 mx-auto py-14">
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-4xl font-bold mb-10">
               College <span className="text-primary">Events</span>
             </h2>
-            <div className="grid grid-cols-3 gap-5 pt-10">
-              {event.map((data, i) => (
-                <Event key={i} {...data} />
-              ))}
-            </div>
+            <Events />
           </section>
         </article>
       </main>

@@ -6,11 +6,11 @@ import { brands, cards, event } from '../utils/data'
 import {
   PiCaretLeftLight,
   PiCaretRightLight,
-  PiCaretDownLight,
   PiCaretDownBold,
 } from 'react-icons/pi'
 import { BiSearch } from 'react-icons/bi'
 import Card from '../components/Card'
+import Events from '../components/Events'
 
 const Home = () => {
   return (
@@ -80,10 +80,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="grid gap-5 grid-cols-3 w-full pt-8 pb-10">
-            {event.map((data, i) => {
-              return <Event key={i} {...data} />
-            })}
+          <div className="pt-8 pb-10">
+            <Events />
           </div>
           <button className="bg-primary text-white rounded-md py-3 px-7 block mx-auto">
             Load more...
