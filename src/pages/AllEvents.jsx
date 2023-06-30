@@ -1,15 +1,8 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import EventCard from '../components/EventCard'
-import { brands, cards, event } from '../utils/data'
-import {
-  PiCaretLeftLight,
-  PiCaretRightLight,
-  PiCaretDownBold,
-} from 'react-icons/pi'
-import { Link } from 'react-router-dom'
-import { BiSearch } from 'react-icons/bi'
-import CollegeCard from '../components/CollegeCard'
+import { event } from '../utils/data'
+import { PiCaretDownBold } from 'react-icons/pi'
 import RenderEvents from '../components/RenderEvents'
 
 const AllEvents = () => {
