@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp'
 import Login from './pages/Login'
 import College from './pages/College'
 import Event from './pages/Event'
+import AllEvents from './pages/AllEvents'
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="login" element={<Login />} />
         <Route path="event" element={<Event />} />
         <Route path="college" element={<College />} />
+        <Route path="all-events" element={<AllEvents />} />
       </Routes>
     </BrowserRouter>
   )

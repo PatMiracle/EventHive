@@ -1,0 +1,59 @@
+import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
+import EventCard from '../components/EventCard'
+import { brands, cards, event } from '../utils/data'
+import {
+  PiCaretLeftLight,
+  PiCaretRightLight,
+  PiCaretDownBold,
+} from 'react-icons/pi'
+import { Link } from 'react-router-dom'
+import { BiSearch } from 'react-icons/bi'
+import CollegeCard from '../components/CollegeCard'
+import RenderEvents from '../components/RenderEvents'
+
+const AllEvents = () => {
+  return (
+    <>
+      <div className="bg-white">
+        <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center">
+          <div>
+            <h1 className="text-7xl font-bold">
+              Event<span className="text-primary">Hive</span>-ing <br /> the
+              Best.Day.
+              <br /> Ever.
+            </h1>
+          </div>
+          <img src="/all_event_banner.png" alt="" />
+        </header>
+        <section className="w-10/12 mx-auto py-36">
+          <div className="flex items-center justify-between">
+            <h2 className="text-4xl font-bold">
+              <span className="text-primary">Events</span> around you
+            </h2>
+            <div className="flex gap-4">
+              <div className="flex items-center bg-[#efeff1] px-4 py-2 justify-between cursor-pointer w-36 rounded-md text-sm">
+                <span>Weekdays</span>
+                <PiCaretDownBold size={20} />
+              </div>
+              <div className="flex items-center bg-[#efeff1] px-4 py-2 justify-between cursor-pointer w-36 rounded-md text-sm">
+                <span>Event type</span>
+                <PiCaretDownBold size={20} />
+              </div>
+              <div className="flex items-center bg-[#efeff1] px-4 py-2 justify-between cursor-pointer w-36 rounded-md text-sm">
+                <span>Any category</span>
+                <PiCaretDownBold size={20} />
+              </div>
+            </div>
+          </div>
+          <div className="pt-8 pb-10">
+            <RenderEvents />
+          </div>
+        </section>
+      </div>
+      <Footer />
+    </>
+  )
+}
+
+export default AllEvents
