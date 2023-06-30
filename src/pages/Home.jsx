@@ -31,21 +31,21 @@ const Home = () => {
         <form className="absolute -bottom-20 w-11/12 left-1/2 -translate-x-1/2 bg-navyBlue rounded-[20px] py-9 px-16 flex items-center justify-between">
           <div className="grid gap-5 w-60">
             <p className="text-backgroundGrey text-lg">Looking for</p>
-            <div className="flex items-center bg-backgroundGrey text-navyBlue px-4 py-2 justify-between cursor-pointer rounded-md">
+            <div className="flex items-center bg-backgroundGrey text-navyBlue px-3 py-2 justify-between cursor-pointer rounded-md">
               <span>Choose event type</span>
               <PiCaretDownBold size={24} />
             </div>
           </div>
           <div className="grid gap-5 w-60">
             <p className="text-backgroundGrey text-lg">Location</p>
-            <div className="flex items-center bg-backgroundGrey text-navyBlue px-4 py-2 justify-between cursor-pointer rounded-md">
+            <div className="flex items-center bg-backgroundGrey text-navyBlue px-3 py-2 justify-between cursor-pointer rounded-md">
               <span>Choose location</span>
               <PiCaretDownBold size={24} />
             </div>
           </div>
           <div className="grid gap-5 w-60">
             <p className="text-backgroundGrey text-lg">When</p>
-            <div className="flex items-center bg-backgroundGrey text-navyBlue px-4 py-2 justify-between cursor-pointer rounded-md">
+            <div className="flex items-center bg-backgroundGrey text-navyBlue px-3 py-2 justify-between cursor-pointer rounded-md">
               <span>Choose data and time</span>
               <PiCaretDownBold size={24} />
             </div>
