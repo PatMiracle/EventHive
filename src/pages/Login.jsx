@@ -46,7 +46,7 @@ const Login = () => {
               type="text"
               id="name"
               autoComplete="off"
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
               placeholder="Enter your mail"
               ref={emailRef}
