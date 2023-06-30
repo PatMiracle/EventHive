@@ -6,7 +6,6 @@ import RenderEvents from '../components/RenderEvents'
 const College = () => {
   return (
     <>
-      <Navbar />
       <main className="w-11/12 mx-auto">
         <article>
           <img src="/roorkee.png" alt="" role="banner" className="w-full" />
@@ -47,7 +46,7 @@ const College = () => {
               </p>
             </div>
           </div>
-          <section className="w-11/12 mx-auto py-14">
+          <section className="w-11/12 mx-auto pt-14 pb-28">
             <h2 className="text-4xl font-bold mb-10">
               College <span className="text-primary">Events</span>
             </h2>
@@ -55,7 +54,6 @@ const College = () => {
           </section>
         </article>
       </main>
-      <Footer />
     </>
   )
 }

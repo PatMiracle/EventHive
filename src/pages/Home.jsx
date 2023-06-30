@@ -16,7 +16,6 @@ import RenderEvents from '../components/RenderEvents'
 const Home = () => {
   return (
     <>
-      <Navbar />
       <header className="w-11/12 mx-auto relative">
         <h2 className="text-white font-bold text-[4rem] absolute top-20 left-1/2 -translate-x-1/2 text-center uppercase max-w-xl">
           Made for those who do
@@ -158,7 +157,6 @@ const Home = () => {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   )
 }

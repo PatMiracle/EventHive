@@ -18,15 +18,30 @@ const AllEvents = () => {
       <div className="bg-white">
         <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center">
           <div>
+            <p>Thriving Above Event Expectations.</p>
             <h1 className="text-7xl font-bold">
               Event<span className="text-primary">Hive</span>-ing <br /> the
               Best.Day.
               <br /> Ever.
             </h1>
+            <div className="flex gap-5 pt-5">
+              <div className="py-5 px-6 bg-primary rounded-lg text-white">
+                <h3 className="text-3xl font-bold">2k+</h3>
+                <p>
+                  Total Events <br /> Hosted
+                </p>
+              </div>
+              <div className="py-5 px-6 bg-primary rounded-lg text-white">
+                <h3 className="text-3xl font-bold">100+</h3>
+                <p>
+                  Total Events <br /> Live
+                </p>
+              </div>
+            </div>
           </div>
           <img src="/all_event_banner.png" alt="" />
         </header>
-        <section className="w-10/12 mx-auto py-36">
+        <section className="w-10/12 mx-auto pt-20">
           <div className="flex items-center justify-between">
             <h2 className="text-4xl font-bold">
               <span className="text-primary">Events</span> around you
@@ -46,7 +61,15 @@ const AllEvents = () => {
               </div>
             </div>
           </div>
-          <div className="pt-8 pb-10">
+          <div className="pt-8 pb-10 grid grid-cols-3 gap-5">
+            {event.slice(0, 3).map((data, i) => (
+              <EventCard {...data} key={i} />
+            ))}
+          </div>
+        </section>
+        <section>
+          <Navbar />
+          <div className="w-10/12 mx-auto pb-28">
             <RenderEvents />
           </div>
         </section>
