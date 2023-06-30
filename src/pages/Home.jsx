@@ -1,6 +1,3 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import EventCard from '../components/EventCard'
 import { brands, cards, event } from '../utils/data'
 import {

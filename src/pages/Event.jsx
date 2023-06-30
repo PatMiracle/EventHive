@@ -1,7 +1,4 @@
-import React from 'react'
 import RenderEvents from '../components/RenderEvents'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
 import { Link } from 'react-router-dom'
 import { PiCaretLeftBold } from 'react-icons/pi'
 import { CiLocationOn } from 'react-icons/ci'
