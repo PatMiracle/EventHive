@@ -34,7 +34,7 @@ const Login = () => {
       <main className="px-40 absolute w-2/3 pt-[7%] pb-5 inline-block">
         <div className="text-center">
           <Logo size="text-2xl" />
-          <h2 className="text-4xl font-bold mt-10">Sign In to Event Hive</h2>
+          <h2 className="mt-10">Sign In to Event Hive</h2>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col gap-10 py-14">
           {/* email */}
@@ -58,7 +58,6 @@ const Login = () => {
               <label htmlFor="password">PASSWORD</label>
               <Link className="text-grey600">Forgot Password?</Link>
             </div>
-
             <input
               type="password"
               id="password"
@@ -83,7 +82,7 @@ const Login = () => {
       </main>
       <div className="h-screen fixed top-0 right-0 w-1/3 before:absolute before:h-full before:w-full before:-z-20 before:bg-[url(/loginbanner.png)] before:bg-no-repeat before:bg-cover after:absolute after:bg-[url(/overlay.png)] after:top-0 after:left-0 after:h-full after:w-full after:-z-10 bg-cover flex justify-center items-center">
         <div className="flex flex-col gap-10 text-white text-center">
-          <h2 className="font-bold text-5xl">Hello Friend</h2>
+          <h1>Hello Friend</h1>
           <p>To keep connected with us provide us with your information</p>
           <Link
             to="/signup"

@@ -7,7 +7,7 @@ const College = () => {
         <article>
           <img src="/roorkee.png" alt="" role="banner" className="w-full" />
           <div className="w-11/12 mx-auto">
-            <h2 className="text-4xl font-bold my-8">IIT Roorke</h2>
+            <h2 className="my-8">IIT Roorke</h2>
             <div className="grid gap-7">
               <p>
                 DesignHub organized a 3D Modeling Workshop using Blender on 16th
@@ -44,7 +44,7 @@ const College = () => {
             </div>
           </div>
           <section className="w-11/12 mx-auto pt-14 pb-28">
-            <h2 className="text-4xl font-bold mb-10">
+            <h2 className="mb-10">
               College <span className="text-primary">Events</span>
             </h2>
             <RenderEvents />

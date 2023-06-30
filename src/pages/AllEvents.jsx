@@ -12,20 +12,20 @@ const AllEvents = () => {
         <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center">
           <div>
             <p>Thriving Above Event Expectations.</p>
-            <h1 className="text-7xl font-bold">
+            <h1 className="text-7xl">
               Event<span className="text-primary">Hive</span>-ing <br /> the
               Best.Day.
               <br /> Ever.
             </h1>
             <div className="flex gap-5 pt-5">
               <div className="py-5 px-6 bg-primary rounded-lg text-white">
-                <h3 className="text-3xl font-bold">2k+</h3>
+                <h3 className="text-3xl">2k+</h3>
                 <p>
                   Total Events <br /> Hosted
                 </p>
               </div>
               <div className="py-5 px-6 bg-primary rounded-lg text-white">
-                <h3 className="text-3xl font-bold">100+</h3>
+                <h3 className="text-3xl">100+</h3>
                 <p>
                   Total Events <br /> Live
                 </p>
@@ -36,7 +36,7 @@ const AllEvents = () => {
         </header>
         <section className="w-10/12 mx-auto pt-20">
           <div className="flex items-center justify-between">
-            <h2 className="text-4xl font-bold">
+            <h2>
               <span className="text-primary">Events</span> around you
             </h2>
             <div className="flex gap-4">
