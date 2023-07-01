@@ -7,6 +7,7 @@ import College from './pages/College'
 import Event from './pages/Event'
 import AllEvents from './pages/AllEvents'
 import ErrorPage from './pages/ErrorPage'
+import CreateEvent from './pages/CreateEvent'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: '/all-events',
     element: <AllEvents />,
+  },
+  {
+    path: '/create-event',
+    element: <CreateEvent />,
   },
 ])
 
