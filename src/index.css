@@ -15,7 +15,7 @@ body {
 }
 h1 {
   font-size: 3rem;
-  line-height: 1;
+  line-height: 1.2 !important;
 }
 h2 {
   font-size: 2.25rem;

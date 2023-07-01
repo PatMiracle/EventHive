@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <>
       <header className="w-11/12 mx-auto relative">
-        <h1 className="text-white absolute leading-[1.2] xl:text-[4rem] top-20 left-1/2 -translate-x-1/2 text-center uppercase max-w-xl">
+        <h1 className="text-white absolute xl:text-[4rem] top-20 left-1/2 -translate-x-1/2 text-center uppercase max-w-xl">
           Made for those who do
         </h1>
         <img src="/homebanner.png" alt="" role="banner" className="w-full" />
