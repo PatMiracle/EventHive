@@ -6,7 +6,7 @@ import { CiLocationOn } from 'react-icons/ci'
 const Event = () => {
   return (
     <>
-      <div className="event-page">
+      <div className="white-bg">
         {/* banner */}
         <div
           className="w-11/12 z-10 mx-auto pl-14 pt-36 pb-14 relative  before:absolute before:top-0 before:left-0 before:bg-[url(/event_banner.png)] before:rounded-lg before:bg-no-repeat before:bg-cover before:h-full before:w-full before:-z-20 after:absolute after:top-0 after:left-0 after:bg-[url(/overlay.png)] after:rounded-lg after:w-full after:h-full after:-z-10"
@@ -134,9 +134,11 @@ const Event = () => {
           </div>
         </article>
       </div>
-      <section className="w-10/12 mx-auto pt-10 pb-28">
-        <h2 className="mb-12">Other events you may like</h2>
-        <RenderEvents />
+      <section className=" bg-backgroundGrey">
+        <div className="w-10/12 mx-auto pt-10 pb-28">
+          <h2 className="mb-12">Other events you may like</h2>
+          <RenderEvents />
+        </div>
       </section>
     </>
   )

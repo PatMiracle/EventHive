@@ -22,6 +22,6 @@ h2 {
 h3 {
   font-size: 1.5rem;
 }
-body:has(.event-page) {
+body:has(.white-bg) {
   background: #fff;
 }

@@ -8,7 +8,7 @@ import RenderEvents from '../components/RenderEvents'
 const AllEvents = () => {
   return (
     <>
-      <div className="bg-white">
+      <div className="white-bg">
         <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center">
           <div>
             <p>Thriving Above Event Expectations.</p>
