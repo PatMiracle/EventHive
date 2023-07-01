@@ -1,5 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
+import PurpleText from './PurpleText'
 
 const Logo = ({ size, color }) => {
   return (
@@ -9,7 +9,7 @@ const Logo = ({ size, color }) => {
         color ? color : 'text-black'
       }`}
     >
-      Event <span className="text-primary">Hive</span>
+      Event <PurpleText text="Hive" />
     </Link>
   )
 }

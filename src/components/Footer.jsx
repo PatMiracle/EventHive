@@ -94,15 +94,15 @@ const Footer = () => {
           </button>
         </div>
         <div className="flex gap-4 ml-[5%]">
-          <Link>
+          <a href="#">
             <PiLinkedinLogoLight size={30} />
-          </Link>
-          <Link>
+          </a>
+          <a href="#">
             <PiInstagramLogo size={30} />
-          </Link>
-          <Link>
+          </a>
+          <a href="#">
             <PiFacebookLogo size={30} />
-          </Link>
+          </a>
         </div>
         <p>Non Copyrighted © 2023 Upload by rich technologies</p>
       </div>
