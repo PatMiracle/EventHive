@@ -1,4 +1,8 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from 'react-router-dom'
 import HomeLayout from './components/HomeLayout'
 import Home from './pages/Home'
 import SignUp from './pages/SignUp'
@@ -10,7 +14,7 @@ import ErrorPage from './pages/ErrorPage'
 import CreateEvent from './pages/CreateEvent'
 import CollegeEvents from './pages/CollegeEvents'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <HomeLayout />,
