@@ -6,7 +6,6 @@ import {
   PiPaperPlaneRightLight,
   PiUser,
 } from 'react-icons/pi'
-import { useEffect, useState } from 'react'
 
 const sidebarLinks = [
   {
