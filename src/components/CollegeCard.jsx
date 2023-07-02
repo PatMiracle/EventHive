@@ -3,7 +3,7 @@ import { BiDotsHorizontalRounded } from 'react-icons/bi'
 
 const Card = ({ img, college, location }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg">
+    <div className="bg-white rounded-lg shadow-lg hover:scale-[1.03] duration-300">
       <img src={img} alt="" className="w-full" />
       <h3 className="px-6 py-6">{college}</h3>
       <div className="flex px-6 py-6 justify-between items-center">
