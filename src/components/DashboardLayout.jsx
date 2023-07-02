@@ -1,4 +1,4 @@
-import { Outlet, Link } from 'react-router-dom'
+import { Outlet, Link, useLocation } from 'react-router-dom'
 import PurpleText from './PurpleText'
 import {
   PiSquaresFourLight,
@@ -6,8 +6,34 @@ import {
   PiPaperPlaneRightLight,
   PiUser,
 } from 'react-icons/pi'
+import { useEffect, useState } from 'react'
+
+const sidebarLinks = [
+  {
+    url: '/dashboard',
+    text: 'Dashboard',
+    icon: <PiSquaresFourLight size={30} />,
+  },
+  {
+    url: '/dashboard/events',
+    text: 'Events',
+    icon: <PiTelevisionSimpleLight size={30} />,
+  },
+  {
+    url: '/dashboard/messages',
+    text: 'Messages',
+    icon: <PiPaperPlaneRightLight size={30} />,
+  },
+  {
+    url: '/dashboard/profile',
+    text: 'Profile',
+    icon: <PiUser size={30} />,
+  },
+]
 
 const DashboardLayout = () => {
+  const location = useLocation()
+
   return (
     <>
       <div className="bg-white h-20"></div>
@@ -16,30 +42,21 @@ const DashboardLayout = () => {
           <PurpleText text="Event Hive" />
         </Link>
         <div className="pt-14 w-40 grid gap-7">
-          <Link
-            to="/dashboard"
-            className="flex gap-3 py-2 items-center text-lg px-2 text-white bg-primary rounded-md"
-          >
-            <PiSquaresFourLight size={30} /> Dashboard
-          </Link>
-          <Link
-            to="/dashboard/events"
-            className="flex gap-3 py-2 items-center text-lg font-bold px-2 text-black rounded-md hover:bg-primary hover:text-white duration-300"
-          >
-            <PiTelevisionSimpleLight size={30} /> Events
-          </Link>
-          <Link
-            to="/dashboard"
-            className="flex gap-3 py-2 items-center text-lg font-bold px-2 text-black rounded-md hover:bg-primary hover:text-white duration-300"
-          >
-            <PiPaperPlaneRightLight size={30} /> Messages
-          </Link>
-          <Link
-            to="/dashboard"
-            className="flex gap-3 py-2 items-center text-lg font-bold px-2 text-black rounded-md hover:bg-primary hover:text-white duration-300"
-          >
-            <PiUser size={30} /> Profile
-          </Link>
+          {sidebarLinks.map(({ url, icon, text }, i) => {
+            return (
+              <Link
+                key={i}
+                to={url}
+                className={`flex gap-3 py-2 items-center text-lg px-2 ${
+                  location.pathname === url
+                    ? 'text-white bg-primary'
+                    : 'bg-white text-black'
+                }  rounded-md hover:bg-primary hover:text-white`}
+              >
+                {icon} {text}
+              </Link>
+            )
+          })}
         </div>
       </aside>
       <main
