@@ -17,6 +17,8 @@ import Register from './pages/Register'
 import DashboardLayout from './components/DashboardLayout'
 import Dashboard from './pages/Dashboard'
 import Events from './pages/Dashboard/Events'
+import Messages from './pages/Dashboard/Messages'
+import Profile from './pages/Dashboard/Profile'
 
 const router = createHashRouter([
   {
@@ -34,12 +36,15 @@ const router = createHashRouter([
   { path: '/login', element: <Login /> },
   { path: '/all-events', element: <AllEvents /> },
   { path: '/create-event', element: <CreateEvent /> },
+  { path: '/register', element: <Register /> },
   {
     path: '/dashboard',
     element: <DashboardLayout />,
     children: [
       { index: true, element: <Dashboard /> },
       { path: '/dashboard/events', element: <Events /> },
+      { path: '/dashboard/messages', element: <Messages /> },
+      { path: '/dashboard/profile', element: <Profile /> },
     ],
   },
 ])
