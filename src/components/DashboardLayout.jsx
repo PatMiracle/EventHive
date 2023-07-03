@@ -57,7 +57,7 @@ const DashboardLayout = () => {
         </div>
       </aside>
       <main
-        className="fixed left-52 top-20 p-8"
+        className="absolute left-52 top-20 p-8"
         style={{ width: 'calc(100% - 13rem)' }}
       >
         <Outlet />
