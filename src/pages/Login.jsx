@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react'
 import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import api from '../utils/api'
 
 const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -11,6 +12,8 @@ const Login = () => {
 
   const emailRef = useRef(null)
   const pswdRef = useRef(null)
+
+  const navigate = useNavigate()
 
   const validateInputs = () => {
     if (!email_regex.test(email)) {
@@ -24,9 +27,19 @@ const Login = () => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     validateInputs()
+    if (validateInputs()) {
+      const data = { email, password: pswd }
+      // submit to api
+      try {
+        const response = await api.post('/login', data)
+        navigate('/dashboard')
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 
   return (

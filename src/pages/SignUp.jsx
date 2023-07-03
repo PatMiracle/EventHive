@@ -1,23 +1,34 @@
 import React, { useRef, useState } from 'react'
 import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import api from '../utils/api'
+
+const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
 const SignUp = () => {
   const [name, setName] = useState('')
-  const [pswd, setpswd] = useState('')
+  const [email, setEmail] = useState('')
+  const [pswd, setPswd] = useState('')
   const [confirmPswd, setConfirmPswd] = useState('')
 
   const nameRef = useRef(null)
+  const emailRef = useRef(null)
   const pswdRef = useRef(null)
   const confirmPswdRef = useRef(null)
+
+  const navigate = useNavigate()
 
   const validateInputs = () => {
     if (!name) {
       nameRef.current.focus()
       return false
+    } else if (!email_regex.test(email)) {
+      emailRef.current.focus()
+      return false
     } else if (pswd.length < 8) {
       pswdRef.current.focus()
+      console.log(pswd)
       return false
     } else if (confirmPswd !== pswd) {
       confirmPswdRef.current.focus()
@@ -27,9 +38,19 @@ const SignUp = () => {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     validateInputs()
+    if (validateInputs()) {
+      const data = { name, email, password: pswd }
+      // submit to api
+      try {
+        const response = await api.post('/register', data)
+        navigate('/login')
+      } catch (error) {
+        console.log(error)
+      }
+    }
   }
 
   return (
@@ -63,8 +84,23 @@ const SignUp = () => {
               autoComplete="off"
               onChange={(e) => setName(e.target.value)}
               className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
-              placeholder="Enter your email"
+              placeholder="Enter your name"
               ref={nameRef}
+            />
+          </div>
+          {/* email */}
+          <div>
+            <label className="block" htmlFor="email">
+              YOUR EMAIL
+            </label>
+            <input
+              type="text"
+              id="email"
+              autoComplete="off"
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
+              placeholder="Enter your email"
+              ref={emailRef}
             />
           </div>
           {/* password */}
@@ -75,7 +111,7 @@ const SignUp = () => {
             <input
               type="password"
               id="password"
-              onChange={(e) => setpswd(e.target.value)}
+              onChange={(e) => setPswd(e.target.value)}
               className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
               placeholder="Enter your password"
               ref={pswdRef}
