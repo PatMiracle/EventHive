@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router-dom'
-import PurpleText from './PurpleText'
+import Logo from './Logo'
 import {
   PiSquaresFourLight,
   PiTelevisionSimpleLight,
@@ -37,9 +37,7 @@ const DashboardLayout = () => {
     <>
       <div className="bg-white h-20"></div>
       <aside className="bg-white fixed top-0 py-7 w-52 left-0 min-h-screen flex flex-col items-center">
-        <Link to="/" className="text-2xl font-bold">
-          <PurpleText text="Event Hive" />
-        </Link>
+        <Logo color="text-primary" size="text-2xl" />
         <div className="pt-14 w-40 grid gap-7">
           {sidebarLinks.map(({ url, icon, text }, i) => {
             return (
