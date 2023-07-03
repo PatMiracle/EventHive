@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from 'react-router-dom'
@@ -9,28 +9,37 @@ const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 const Login = () => {
   const [email, setEmail] = useState('')
   const [pswd, setPswd] = useState('')
+  const [formErrors, setFormErrors] = useState({})
 
   const emailRef = useRef(null)
   const pswdRef = useRef(null)
 
+  // reset formErrors when input changes
+  useEffect(() => {
+    setFormErrors({})
+  }, [email, pswd])
+
   const navigate = useNavigate()
 
   const validateInputs = () => {
+    const err = {}
+    if (pswd.length < 8) {
+      pswdRef.current.focus()
+      err.pswd = 'password should be up to 8 characters'
+    }
     if (!email_regex.test(email)) {
       emailRef.current.focus()
-      return false
-    } else if (pswd.length < 8) {
-      pswdRef.current.focus()
-      return false
-    } else {
-      return true
+      err.email = 'email is invalid'
     }
+    setFormErrors(err)
+    return err
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     validateInputs()
-    if (validateInputs()) {
+    const result = validateInputs()
+    if (Object.keys(result).length === 0) {
       const data = { email, password: pswd }
       // submit to api
       try {
@@ -52,18 +61,19 @@ const Login = () => {
         <form onSubmit={handleSubmit} className="flex flex-col gap-10 py-14">
           {/* email */}
           <div>
-            <label className="block" htmlFor="name">
+            <label className="block" htmlFor="email">
               YOUR EMAIL
             </label>
             <input
               type="text"
-              id="name"
+              id="email"
               autoComplete="off"
               onChange={(e) => setEmail(e.target.value)}
               className="w-full px-5 py-[10px] mt-2 rounded-md text-lg"
               placeholder="Enter your mail"
               ref={emailRef}
             />
+            <p className="text-xs text-red-600">{formErrors.email}</p>
           </div>
           {/* password */}
           <div>
@@ -79,6 +89,7 @@ const Login = () => {
               placeholder="Enter your password"
               ref={pswdRef}
             />
+            <p className="text-xs text-red-600">{formErrors.pswd}</p>
           </div>
           {/* buttons */}
           <button className="rounded-md text-white text-lg bg-primary w-72 mx-auto text-center py-2">
