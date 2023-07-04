@@ -25,12 +25,21 @@ const Login = () => {
     const err = {}
     if (pswd.length < 8) {
       pswdRef.current.focus()
-      err.pswd = 'password should be up to 8 characters'
+      err.pswd = 'password should atleast 8 characters'
+    }
+    if (!pswd) {
+      pswdRef.current.focus()
+      err.pswd = 'password is required'
     }
     if (!email_regex.test(email)) {
       emailRef.current.focus()
       err.email = 'email is invalid'
     }
+    if (!email) {
+      emailRef.current.focus()
+      err.email = 'email is required'
+    }
+
     setFormErrors(err)
     return err
   }
@@ -46,7 +55,7 @@ const Login = () => {
         const response = await api.post('/login', data)
         navigate('/dashboard')
       } catch (error) {
-        console.log(error)
+        console.log(error.message)
       }
     }
   }
