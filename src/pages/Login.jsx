@@ -3,6 +3,7 @@ import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from 'react-router-dom'
 import api from '../utils/api'
+import Preloader from '../components/Preloader'
 
 const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -10,6 +11,7 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [pswd, setPswd] = useState('')
   const [formErrors, setFormErrors] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
 
   const emailRef = useRef(null)
   const pswdRef = useRef(null)
@@ -52,10 +54,13 @@ const Login = () => {
       const data = { email, password: pswd }
       // submit to api
       try {
+        setIsLoading(true)
         const response = await api.post('/login', data)
         navigate('/dashboard')
       } catch (error) {
         console.log(error.message)
+      } finally {
+        setIsLoading(false)
       }
     }
   }
@@ -125,6 +130,7 @@ const Login = () => {
           </Link>
         </div>
       </div>
+      {isLoading && <Preloader />}{' '}
     </div>
   )
 }

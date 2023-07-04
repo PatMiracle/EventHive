@@ -12,6 +12,7 @@ const SignUp = () => {
   const [pswd, setPswd] = useState('')
   const [confirmPswd, setConfirmPswd] = useState('')
   const [formErrors, setFormErrors] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
 
   //  reset formErrors when input changes
   useEffect(() => {
@@ -65,6 +66,7 @@ const SignUp = () => {
     validateInputs()
     const result = validateInputs()
     if (Object.keys(result).length === 0) {
+      setIsLoading(true)
       const data = { name, email, password: pswd }
       // submit to api
       try {
@@ -72,6 +74,8 @@ const SignUp = () => {
         navigate('/login')
       } catch (error) {
         console.log(error)
+      } finally {
+        setIsLoading(false)
       }
     }
   }
@@ -171,6 +175,7 @@ const SignUp = () => {
           </button>
         </form>
       </main>
+      {isLoading && <Preloader />}{' '}
     </div>
   )
 }
