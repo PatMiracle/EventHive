@@ -96,9 +96,12 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur <br />
               adipiscing elit.
             </p>
-            <button className="py-4 w-72 text-center text-lg bg-primary rounded-md">
+            <Link
+              to="/create-event"
+              className="py-4 px-10 text-lg bg-primary rounded-md"
+            >
               Create Events
-            </button>
+            </Link>
           </div>
         </div>
         {/* brands */}

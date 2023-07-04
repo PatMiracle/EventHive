@@ -92,8 +92,10 @@ const CreateEvent = () => {
             <div>
               <label htmlFor="image">Event Image</label>
               <input
-                type="image"
-                className="h-60 w-full bg-backgroundGrey mt-1"
+                type="file"
+                id="image"
+                accept="image/*"
+                className="block bg-backgroundGrey mt-1"
               />
             </div>
             {/* description */}
