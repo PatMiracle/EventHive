@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from 'react-router-dom'
@@ -11,6 +11,12 @@ const SignUp = () => {
   const [email, setEmail] = useState('')
   const [pswd, setPswd] = useState('')
   const [confirmPswd, setConfirmPswd] = useState('')
+  const [formErrors, setFormErrors] = useState({})
+
+  //  reset formErrors when input changes
+  useEffect(() => {
+    setFormErrors({})
+  }, [name, email, pswd, confirmPswd])
 
   const nameRef = useRef(null)
   const emailRef = useRef(null)
@@ -20,28 +26,45 @@ const SignUp = () => {
   const navigate = useNavigate()
 
   const validateInputs = () => {
+    const err = {}
+
+    if (confirmPswd !== pswd) {
+      confirmPswdRef.current.focus()
+      err.confirmPswd = 'password does not match'
+    }
+    if (pswd.length < 8) {
+      pswdRef.current.focus()
+      err.pswd = 'password should atleast 8 characters'
+    }
+    if (!pswd) {
+      pswdRef.current.focus()
+      err.pswd = 'password is required'
+    }
+    if (!email_regex.test(email)) {
+      emailRef.current.focus()
+      err.email = 'email is invalid'
+    }
+    if (!email) {
+      emailRef.current.focus()
+      err.email = 'email is required'
+    }
+    if (name.length < 4) {
+      nameRef.current.focus()
+      err.name = 'name should atleast four letters'
+    }
     if (!name) {
       nameRef.current.focus()
-      return false
-    } else if (!email_regex.test(email)) {
-      emailRef.current.focus()
-      return false
-    } else if (pswd.length < 8) {
-      pswdRef.current.focus()
-      console.log(pswd)
-      return false
-    } else if (confirmPswd !== pswd) {
-      confirmPswdRef.current.focus()
-      return false
-    } else {
-      return true
+      err.name = 'name is required'
     }
+    setFormErrors(err)
+    return err
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     validateInputs()
-    if (validateInputs()) {
+    const result = validateInputs()
+    if (Object.keys(result).length === 0) {
       const data = { name, email, password: pswd }
       // submit to api
       try {
@@ -87,6 +110,7 @@ const SignUp = () => {
               placeholder="Enter your name"
               ref={nameRef}
             />
+            <p className="text-xs text-red-600">{formErrors.name}</p>
           </div>
           {/* email */}
           <div>
@@ -102,6 +126,7 @@ const SignUp = () => {
               placeholder="Enter your email"
               ref={emailRef}
             />
+            <p className="text-xs text-red-600">{formErrors.email}</p>
           </div>
           {/* password */}
           <div>
@@ -116,6 +141,7 @@ const SignUp = () => {
               placeholder="Enter your password"
               ref={pswdRef}
             />
+            <p className="text-xs text-red-600">{formErrors.pswd}</p>
           </div>
           {/* confirm password */}
           <div>
@@ -130,6 +156,7 @@ const SignUp = () => {
               placeholder="Enter your password"
               ref={confirmPswdRef}
             />
+            <p className="text-xs text-red-600">{formErrors.confirmPswd}</p>
           </div>
           {/* buttons */}
           <button className="rounded-md text-white text-lg bg-primary w-72 mx-auto text-center py-2">
