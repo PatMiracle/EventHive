@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
 
 const CreateEvent = () => {
@@ -10,7 +10,9 @@ const CreateEvent = () => {
   const [endDate, setEndDate] = useState('')
   const [desc, setDesc] = useState('')
 
-  const handleSubmit = (e) => {
+  const submitRef = useRef(null)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
   }
 
@@ -109,7 +111,11 @@ const CreateEvent = () => {
               ></textarea>
             </div>
           </div>
-          <button className="w-full bg-primary text-center text-white py-3">
+          <button
+            disabled
+            ref={submitRef}
+            className="w-full bg-primary text-center disabled:bg-opacity-20 text-white py-3"
+          >
             Create Event
           </button>
         </form>
