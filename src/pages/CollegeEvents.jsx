@@ -9,10 +9,10 @@ const CollegeEvents = () => {
         <h1 className="xl:text-[4rem] text-center mt-20 mb-12">
           Checkout your <PurpleText text="college events" /> now!!
         </h1>
-        <div className="flex gap-4 justify-between items-center">
-          <img src="/college-events_left.png" alt="" />
-          <img src="/college-events_center.png" alt="" />
-          <img src="/college-events_right.png" alt="" />
+        <div className="flex gap-4 justify-between items-center max-w-full overflow-hidden">
+          <img src="/college-events_left.png" alt="" className="w-[30%]" />
+          <img src="/college-events_center.png" alt="" className="w-[40%]" />
+          <img src="/college-events_right.png" alt="" className="w-[30%]" />
         </div>
       </header>
       <main className="pt-20 pb-40 w-10/12 mx-auto">
