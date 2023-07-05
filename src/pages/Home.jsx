@@ -16,6 +16,9 @@ import RenderEvents from '../components/RenderEvents'
 const Home = () => {
   return (
     <>
+      <div className="fixed top-0 left-0 w-full h-screen z-50 bg-white lg:hidden">
+        <h3>Sorry this site is not available for mobile, coming soon...</h3>
+      </div>
       <header className="w-11/12 mx-auto relative">
         <h1 className="text-white absolute xl:text-[4rem] top-20 left-1/2 -translate-x-1/2 text-center uppercase max-w-xl">
           Made for those who do
