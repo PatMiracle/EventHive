@@ -58,7 +58,7 @@ const Login = () => {
       try {
         setIsLoading(true)
         const response = await api.post('/login', data)
-        navigate('/dashboard')
+        navigate('/register')
       } catch (error) {
         notifyError(
           error.response ? error.response.data.message : error.message
