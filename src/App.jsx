@@ -20,7 +20,7 @@ import Events from './pages/Dashboard/Events'
 import Messages from './pages/Dashboard/Messages'
 import Profile from './pages/Dashboard/Profile'
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeLayout />,
