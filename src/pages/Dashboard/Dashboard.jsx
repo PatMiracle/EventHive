@@ -28,7 +28,7 @@ const Dashboard = () => {
           <div className="flex justify-between items-center">
             <h3>Weekly Revenue</h3>
             <span className="py-2 px-4 bg-[#f4f7fe] rounded-lg">
-              <img src="/bar_chart.svg" alt="" />
+              <img src="/src/assets/images/bar_chart.svg" alt="" />
             </span>
           </div>
           <div className="h-72">

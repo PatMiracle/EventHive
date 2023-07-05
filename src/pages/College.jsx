@@ -1,11 +1,12 @@
 import RenderEvents from '../components/RenderEvents'
+import roorkee from '../assets/images/roorkee.png'
 
 const College = () => {
   return (
     <>
       <main className="w-11/12 mx-auto">
         <article>
-          <img src="/roorkee.png" alt="" role="banner" className="w-full" />
+          <img src={roorkee} alt="" role="banner" className="w-full" />
           <div className="w-11/12 mx-auto">
             <h2 className="my-8">IIT Roorke</h2>
             <div className="grid gap-7">

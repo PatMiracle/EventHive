@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PurpleText from '../../components/PurpleText'
 import DashboardEventCard from '../../components/DashboardEventCard'
+import banner from '../../assets/images/dashboard/hero.png'
 
 const Events = () => {
   return (
@@ -9,8 +10,9 @@ const Events = () => {
       {/* hero */}
       <div className="relative">
         <img
-          src="/dashboard/hero.png"
+          src={banner}
           alt=""
+          role="banner"
           className="rounded-lg h-[21rem] w-full object-cover"
         />
         <div className="absolute h-full w-96 top-10 left-12 text-white">

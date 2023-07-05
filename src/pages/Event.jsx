@@ -2,6 +2,10 @@ import RenderEvents from '../components/RenderEvents'
 import { Link } from 'react-router-dom'
 import { PiCaretLeftBold } from 'react-icons/pi'
 import { CiLocationOn } from 'react-icons/ci'
+import facebook from '../assets/images/facebook.svg'
+import whatsapp from '../assets/images/whatsapp.svg'
+import linkedIn from '../assets/images/linkedIn.svg'
+import twitter from '../assets/images/twitter.svg'
 
 const Event = () => {
   return (
@@ -9,7 +13,7 @@ const Event = () => {
       <div className="white-bg">
         {/* banner */}
         <div
-          className="w-11/12 z-10 mx-auto pl-14 pt-36 pb-14 relative  before:absolute before:top-0 before:left-0 before:bg-[url(/event_banner.png)] before:rounded-lg before:bg-no-repeat before:bg-cover before:h-full before:w-full before:-z-20 after:absolute after:top-0 after:left-0 after:bg-[url(/overlay.png)] after:rounded-lg after:w-full after:h-full after:-z-10"
+          className="w-11/12 z-10 mx-auto pl-14 pt-36 pb-14 relative  before:absolute before:top-0 before:left-0 before:bg-[url(/src/assets/images/event_banner.png)] before:rounded-lg before:bg-no-repeat before:bg-cover before:h-full before:w-full before:-z-20 after:absolute after:top-0 after:left-0 after:bg-[url(/src/assets/images/overlay.png)] after:rounded-lg after:w-full after:h-full after:-z-10"
           role="banner"
         >
           <Link
@@ -99,7 +103,11 @@ const Event = () => {
           {/* event location */}
           <div>
             <h3>Event location</h3>
-            <img src="/map.png" alt="map" className="mt-5 mb-8 w-full" />
+            <img
+              src="/src/assets/images/map.png"
+              alt="map"
+              className="mt-5 mb-8 w-full"
+            />
             <h3>Dream world wide in jakatra</h3>
             <p className="text-grey600 mb-10">
               Dummy location generation model by RSU ... Our approach generates
@@ -126,10 +134,10 @@ const Event = () => {
             {/* share with friends */}
             <h3>Share with friends</h3>
             <div className="flex gap-4 pt-5">
-              <img src="/facebook.svg" alt="facebook" />
-              <img src="/whatsapp.svg" alt="whatsapp" />
-              <img src="/linkedIn.svg" alt="linkedIn" />
-              <img src="/twitter.svg" alt="twitter" />
+              <img src={facebook} alt="facebook" />
+              <img src={whatsapp} alt="whatsapp" />
+              <img src={linkedIn} alt="linkedIn" />
+              <img src={twitter} alt="twitter" />
             </div>
           </div>
         </article>

@@ -123,7 +123,7 @@ const Login = () => {
           </button>
         </form>
       </main>
-      <div className="h-screen fixed top-0 right-0 w-1/3 before:absolute before:h-full before:w-full before:-z-20 before:bg-[url(/loginbanner.png)] before:bg-no-repeat before:bg-cover after:absolute after:bg-[url(/overlay.png)] after:top-0 after:left-0 after:h-full after:w-full after:-z-10 bg-cover flex justify-center items-center">
+      <aside className="h-screen fixed top-0 right-0 w-1/3 before:absolute before:h-full before:w-full before:-z-20 before:bg-[url(/src/assets/images/loginbanner.png)] before:bg-no-repeat before:bg-cover after:absolute after:bg-[url(/src/assets/images/overlay.png)] after:top-0 after:left-0 after:h-full after:w-full after:-z-10 bg-cover flex justify-center items-center">
         <div className="flex flex-col gap-10 text-white text-center">
           <h1>Hello Friend</h1>
           <p>To keep connected with us provide us with your information</p>
@@ -134,7 +134,7 @@ const Login = () => {
             Sign Up
           </Link>
         </div>
-      </div>
+      </aside>
       {isLoading && <Preloader />}
     </div>
   )

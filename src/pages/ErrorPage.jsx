@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import errorImg from '/404.svg'
+import errorImg from '../assets/images/404.svg'
 import { Link } from 'react-router-dom'
 import {
   BiLogoFacebook,

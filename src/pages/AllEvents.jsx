@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import EventCard from '../components/EventCard'
 import { event } from '../utils/data'
+import banner from '../assets/images/all_event_banner.png'
 import { PiCaretDownBold } from 'react-icons/pi'
 import RenderEvents from '../components/RenderEvents'
 import ScrollToTop from '../components/ScrollToTop'
@@ -11,7 +12,7 @@ const AllEvents = () => {
     <>
       <ScrollToTop />
       <div className="white-bg">
-        <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center">
+        <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center overflow-hidden">
           <div>
             <p>Thriving Above Event Expectations.</p>
             <h1 className="text-7xl">
@@ -33,7 +34,7 @@ const AllEvents = () => {
               </div>
             </div>
           </div>
-          <img src="/all_event_banner.png" alt="" />
+          <img src={banner} alt="" />
         </header>
         <section className="w-10/12 mx-auto pt-20">
           <div className="flex items-center justify-between">

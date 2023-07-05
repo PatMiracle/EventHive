@@ -1,37 +1,45 @@
 // temp event data
+import image1 from '../assets/images/events/image1.png'
+import image2 from '../assets/images/events/image2.png'
+import image3 from '../assets/images/events/image3.png'
+
+import harvard from '../assets/images/colleges/harvard.png'
+import stanford from '../assets/images/colleges/stanford.png'
+import nanyang from '../assets/images/colleges/nanyang.png'
+
 const event = [
   {
-    img: '/events/image3.png',
+    img: image3,
     text: 'BestSelller Book Bootcamp -write, Market & Publish Your Book -Lucknow',
     date: 'Saturday, March 18, 9.30PM',
     type: 'ONLINE EVENT - Attend anywhere',
   },
   {
-    img: '/events/image2.png',
+    img: image2,
     text: 'BestSelller Book Bootcamp -write, Market & Publish Your Book -Lucknow',
     date: 'Saturday, March 18, 9.30PM',
     type: 'ONLINE EVENT - Attend anywhere',
   },
   {
-    img: '/events/image2.png',
+    img: image2,
     text: 'BestSelller Book Bootcamp -write, Market & Publish Your Book -Lucknow',
     date: 'Saturday, March 18, 9.30PM',
     type: 'ONLINE EVENT - Attend anywhere',
   },
   {
-    img: '/events/image2.png',
+    img: image2,
     text: 'BestSelller Book Bootcamp -write, Market & Publish Your Book -Lucknow',
     date: 'Saturday, March 18, 9.30PM',
     type: 'ONLINE EVENT - Attend anywhere',
   },
   {
-    img: '/events/image1.png',
+    img: image1,
     text: 'BestSelller Book Bootcamp -write, Market & Publish Your Book -Lucknow',
     date: 'Saturday, March 18, 9.30PM',
     type: 'ONLINE EVENT - Attend anywhere',
   },
   {
-    img: '/events/image3.png',
+    img: image3,
     text: 'BestSelller Book Bootcamp -write, Market & Publish Your Book -Lucknow',
     date: 'Saturday, March 18, 9.30PM',
     type: 'ONLINE EVENT - Attend anywhere',
@@ -40,31 +48,20 @@ const event = [
 // temp cards data
 const cards = [
   {
-    img: '/colleges/harvard.png',
+    img: harvard,
     college: 'Harvard University',
     location: 'Cambridge, Massachusetts, UK',
   },
   {
-    img: '/colleges/stanford.png',
+    img: stanford,
     college: 'Stanford University',
     location: 'Stanford, California',
   },
   {
-    img: '/colleges/nanyang.png',
+    img: nanyang,
     college: 'Nanyang University',
     location: 'Nanyang Ave, Singapura',
   },
-]
-const brands = [
-  '/brands/spotify.png',
-  '/brands/google.png',
-  '/brands/stripe.png',
-  '/brands/youtube.png',
-  '/brands/microsoft.png',
-  '/brands/medium.png',
-  '/brands/zoom.png',
-  '/brands/uber.png',
-  '/brands/grab.png',
 ]
 //temp charts data
 const stackedColumn = [
@@ -99,4 +96,4 @@ const dailyTraffic = [
   { name: '18', value: 20 },
   { name: '18', value: 54 },
 ]
-export { event, cards, brands, stackedColumn, piechart, dailyTraffic }
+export { event, cards, stackedColumn, piechart, dailyTraffic }

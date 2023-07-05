@@ -1,6 +1,9 @@
 import PurpleText from '../components/PurpleText'
 import RenderEvents from '../components/RenderEvents'
 import { PiCaretDownBold } from 'react-icons/pi'
+import leftImg from '../assets/images/college-events_left.png'
+import centerImg from '../assets/images/college-events_center.png'
+import rightImg from '../assets/images/college-events_right.png'
 
 const CollegeEvents = () => {
   return (
@@ -10,9 +13,9 @@ const CollegeEvents = () => {
           Checkout your <PurpleText text="college events" /> now!!
         </h1>
         <div className="flex gap-4 justify-between items-center max-w-full overflow-hidden">
-          <img src="/college-events_left.png" alt="" className="w-[30%]" />
-          <img src="/college-events_center.png" alt="" className="w-[40%]" />
-          <img src="/college-events_right.png" alt="" className="w-[30%]" />
+          <img src={leftImg} alt="" className="w-[30%]" />
+          <img src={centerImg} alt="" className="w-[40%]" />
+          <img src={rightImg} alt="" className="w-[30%]" />
         </div>
       </header>
       <main className="pt-20 pb-40 w-10/12 mx-auto">

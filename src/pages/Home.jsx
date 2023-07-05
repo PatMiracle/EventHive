@@ -1,5 +1,8 @@
+import banner from '../assets/images/homebanner.png'
+import makeEvent from '../assets/images/make_event.png'
 import EventCard from '../components/EventCard'
-import { brands, cards, event } from '../utils/data'
+import { cards, event } from '../utils/data'
+import brands from '../utils/brands'
 import {
   PiCaretLeftLight,
   PiCaretRightLight,
@@ -17,7 +20,7 @@ const Home = () => {
         <h1 className="text-white absolute xl:text-[4rem] top-20 left-1/2 -translate-x-1/2 text-center uppercase max-w-xl">
           Made for those who do
         </h1>
-        <img src="/homebanner.png" alt="" role="banner" className="w-full" />
+        <img src={banner} alt="" role="banner" className="w-full" />
         {/* left right btn container */}
         <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full">
           <button className="absolute left-10 w-[50px] h-[50px] bg-[#f2f2f233] rounded-full flex items-center justify-center text-white">
@@ -81,7 +84,7 @@ const Home = () => {
             <RenderEvents />
           </div>
           <Link
-            to="/event"
+            to="/all-events"
             className="bg-primary text-white rounded-md py-3 px-7 block mx-auto w-max"
           >
             Load more...
@@ -89,7 +92,7 @@ const Home = () => {
         </section>
         {/* make event */}
         <div className="relative before:absolute before:bg-navyBlue before:-z-10 before:h-[85%] before:w-full before:left-0 before:bottom-0 text-backgroundGrey flex pt-8 items-center pr-64 pl-20 justify-between">
-          <img src="/make_event.png" alt="" />
+          <img src={makeEvent} alt="" />
           <div className="w-max">
             <h2>Make your own Event</h2>
             <p className="text-lg pt-4 pb-5">
@@ -137,7 +140,7 @@ const Home = () => {
             })}
           </div>
           <Link
-            to="/college"
+            to="/college-events"
             className="bg-primary text-white rounded-md py-3 px-7 block mx-auto w-max"
           >
             Load more...
