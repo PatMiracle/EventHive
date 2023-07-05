@@ -4,17 +4,18 @@ import EventCard from '../components/EventCard'
 import { event } from '../utils/data'
 import { PiCaretDownBold } from 'react-icons/pi'
 import RenderEvents from '../components/RenderEvents'
+import ScrollToTop from '../components/ScrollToTop'
 
 const AllEvents = () => {
   return (
     <>
+      <ScrollToTop />
       <div className="white-bg">
         <header className="w-11/12 ml-auto flex justify-between gap-10 pt-28 items-center">
           <div>
             <p>Thriving Above Event Expectations.</p>
             <h1 className="text-7xl">
-              Event<span className="text-primary">Hive</span>-ing <br /> the
-              Best.Day.
+              Event<span className="text-primary">Hive</span>-ing the Best.Day.
               <br /> Ever.
             </h1>
             <div className="flex gap-5 pt-5">

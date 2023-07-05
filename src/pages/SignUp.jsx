@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import api from '../utils/api'
 import notifyError from '../utils/notifyError'
 import Preloader from '../components/Preloader'
+import ScrollToTop from '../components/ScrollToTop'
 
 const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -86,6 +87,7 @@ const SignUp = () => {
 
   return (
     <div>
+      <ScrollToTop />
       <div className="h-screen fixed top-0 left-0 w-1/3 before:absolute before:h-full before:w-full before:-z-20 before:bg-[url(/signupbanner.png)] before:bg-no-repeat before:bg-cover after:absolute after:bg-[url(/overlay.png)] after:top-0 after:left-0 after:h-full after:w-full after:-z-10 bg-cover flex justify-center items-center">
         <div className="flex flex-col gap-10 text-white text-center">
           <h1>Welcome back</h1>

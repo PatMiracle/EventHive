@@ -6,6 +6,7 @@ import {
   PiPaperPlaneRightLight,
   PiUser,
 } from 'react-icons/pi'
+import ScrollToTop from './ScrollToTop'
 
 const sidebarLinks = [
   {
@@ -35,6 +36,7 @@ const DashboardLayout = () => {
 
   return (
     <>
+      <ScrollToTop />
       <div className="bg-white h-20"></div>
       <aside className="bg-white fixed top-0 py-7 w-52 left-0 min-h-screen flex flex-col items-center">
         <Logo color="text-primary" size="text-2xl" />

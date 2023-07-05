@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import Navbar from '../components/Navbar'
+import ScrollToTop from '../components/ScrollToTop'
 
 const CreateEvent = () => {
   const [title, setTitle] = useState('')
@@ -18,6 +19,7 @@ const CreateEvent = () => {
 
   return (
     <>
+      <ScrollToTop />
       <Navbar />
       <main className="w-7/12 max-w-3xl mx-auto py-10">
         <form onSubmit={handleSubmit}>
