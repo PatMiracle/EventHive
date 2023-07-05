@@ -4,6 +4,7 @@ import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from 'react-router-dom'
 import api from '../utils/api'
 import Preloader from '../components/Preloader'
+import notifyError from '../utils/notifyError'
 
 const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -58,7 +59,9 @@ const Login = () => {
         const response = await api.post('/login', data)
         navigate('/dashboard')
       } catch (error) {
-        console.log(error.message)
+        notifyError(
+          error.response ? error.response.data.message : error.message
+        )
       } finally {
         setIsLoading(false)
       }
@@ -130,7 +133,7 @@ const Login = () => {
           </Link>
         </div>
       </div>
-      {isLoading && <Preloader />}{' '}
+      {isLoading && <Preloader />}
     </div>
   )
 }

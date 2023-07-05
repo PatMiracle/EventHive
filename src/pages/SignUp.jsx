@@ -3,6 +3,8 @@ import Logo from '../components/Logo'
 import { FcGoogle } from 'react-icons/fc'
 import { Link, useNavigate } from 'react-router-dom'
 import api from '../utils/api'
+import notifyError from '../utils/notifyError'
+import Preloader from '../components/Preloader'
 
 const email_regex = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/
 
@@ -73,7 +75,9 @@ const SignUp = () => {
         const response = await api.post('/register', data)
         navigate('/login')
       } catch (error) {
-        console.log(error)
+        notifyError(
+          error.response ? error.response.data.message : error.message
+        )
       } finally {
         setIsLoading(false)
       }
