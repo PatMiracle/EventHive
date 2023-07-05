@@ -1,9 +1,13 @@
 import React from 'react'
 import { BiDotsHorizontalRounded } from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 
 const Card = ({ img, college, location }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg hover:scale-[1.03] duration-300">
+    <Link
+      to="/college"
+      className="bg-white rounded-lg shadow-lg hover:scale-[1.03] duration-300"
+    >
       <img src={img} alt="" className="w-full" />
       <h3 className="px-6 py-6">{college}</h3>
       <div className="flex px-6 py-6 justify-between items-center">
@@ -12,7 +16,7 @@ const Card = ({ img, college, location }) => {
           <BiDotsHorizontalRounded size={30} />
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
