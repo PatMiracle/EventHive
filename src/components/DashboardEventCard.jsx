@@ -11,7 +11,7 @@ const DashboardEventCard = () => {
   }
 
   return (
-    <div className="p-4 bg-white rounded-xl relative hover:scale-[1.02] duration-300">
+    <div className="p-4 bg-white rounded-xl relative hover:scale-[1.01] duration-300">
       <img
         src="/dashboard/eventcard.png"
         alt=""
